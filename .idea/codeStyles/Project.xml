@@ -1,0 +1,127 @@
+<component name="ProjectCodeStyleConfiguration">
+  <code_scheme name="Project" version="173">
+    <option name="AUTODETECT_INDENTS" value="false" />
+    <option name="OTHER_INDENT_OPTIONS">
+      <value>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+        <option name="USE_TAB_CHARACTER" value="true" />
+        <option name="SMART_TABS" value="true" />
+      </value>
+    </option>
+    <option name="HTML_ATTRIBUTE_WRAP" value="0" />
+    <option name="HTML_SPACE_INSIDE_EMPTY_TAG" value="true" />
+    <option name="HTML_ENFORCE_QUOTES" value="true" />
+    <CssCodeStyleSettings>
+      <option name="HEX_COLOR_LOWER_CASE" value="true" />
+      <option name="HEX_COLOR_SHORT_FORMAT" value="true" />
+    </CssCodeStyleSettings>
+    <HTMLCodeStyleSettings>
+      <option name="HTML_ATTRIBUTE_WRAP" value="0" />
+      <option name="HTML_SPACE_INSIDE_EMPTY_TAG" value="true" />
+      <option name="HTML_ENFORCE_QUOTES" value="true" />
+    </HTMLCodeStyleSettings>
+    <JSCodeStyleSettings>
+      <option name="FORCE_SEMICOLON_STYLE" value="true" />
+      <option name="ALIGN_VAR_STATEMENTS" value="1" />
+      <option name="SPACE_BEFORE_FUNCTION_LEFT_PARENTH" value="false" />
+      <option name="FORCE_QUOTE_STYlE" value="true" />
+      <option name="ENFORCE_TRAILING_COMMA" value="Remove" />
+      <option name="SPACES_WITHIN_OBJECT_LITERAL_BRACES" value="true" />
+      <option name="SPACES_WITHIN_IMPORTS" value="true" />
+      <option name="USE_CHAINED_CALLS_GROUP_INDENTS" value="true" />
+    </JSCodeStyleSettings>
+    <TypeScriptCodeStyleSettings>
+      <option name="FORCE_SEMICOLON_STYLE" value="true" />
+      <option name="SPACE_BEFORE_FUNCTION_LEFT_PARENTH" value="false" />
+      <option name="FORCE_QUOTE_STYlE" value="true" />
+      <option name="ENFORCE_TRAILING_COMMA" value="Remove" />
+      <option name="SPACES_WITHIN_OBJECT_LITERAL_BRACES" value="true" />
+      <option name="SPACES_WITHIN_IMPORTS" value="true" />
+      <option name="USE_CHAINED_CALLS_GROUP_INDENTS" value="true" />
+    </TypeScriptCodeStyleSettings>
+    <codeStyleSettings language="CSS">
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+        <option name="KEEP_INDENTS_ON_EMPTY_LINES" value="true" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="CoffeeScript">
+      <indentOptions>
+        <option name="CONTINUATION_INDENT_SIZE" value="4" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="HAML">
+      <indentOptions>
+        <option name="CONTINUATION_INDENT_SIZE" value="4" />
+        <option name="TAB_SIZE" value="2" />
+        <option name="USE_TAB_CHARACTER" value="true" />
+        <option name="SMART_TABS" value="true" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="HTML">
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+        <option name="KEEP_INDENTS_ON_EMPTY_LINES" value="true" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="JSON">
+      <indentOptions>
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+        <option name="KEEP_INDENTS_ON_EMPTY_LINES" value="true" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="Jade">
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+        <option name="USE_TAB_CHARACTER" value="true" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="JavaScript">
+      <option name="KEEP_FIRST_COLUMN_COMMENT" value="false" />
+      <option name="ALIGN_MULTILINE_CHAINED_METHODS" value="true" />
+      <option name="SOFT_MARGINS" value="80" />
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+        <option name="KEEP_INDENTS_ON_EMPTY_LINES" value="true" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="LESS">
+      <indentOptions>
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+        <option name="KEEP_INDENTS_ON_EMPTY_LINES" value="true" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="SASS">
+      <indentOptions>
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="SCSS">
+      <indentOptions>
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+        <option name="KEEP_INDENTS_ON_EMPTY_LINES" value="true" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="TypeScript">
+      <option name="SOFT_MARGINS" value="80" />
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+        <option name="KEEP_INDENTS_ON_EMPTY_LINES" value="true" />
+      </indentOptions>
+    </codeStyleSettings>
+  </code_scheme>
+</component>

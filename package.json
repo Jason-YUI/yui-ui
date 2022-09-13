@@ -1,8 +1,8 @@
 {
-  "name": "jobsofferings-ui-components",
-  "version": "0.0.1",
+  "name": "yui-ui-pro",
+  "version": "1.0.0",
   "private": false,
-  "author": "jobsofferngs",
+  "author": "jason",
   "description": "your own React component library using Rollup, TypeScript, Less and Storybook",
   "main": "build/index.js",
   "module": "build/index.esm.js",
@@ -16,7 +16,7 @@
     "_____comment": "npm run git -- 'commit-msg'  so you can push and update by a auto way",
     "git": "git add . && git commit -m",
     "postgit": "npm run build && npm version patch && npm publish && git push",
-    "sb": "start-storybook -p 6006",
+    "sb": "start-storybook -p 9000",
     "build": "rimraf build/* && rollup -c",
     "build:sb": "build-storybook -c .storybook -o docs"
   },
