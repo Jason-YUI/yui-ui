@@ -1,6 +1,6 @@
 {
-  "name": "yui-ui-pro",
-  "version": "1.0.0",
+  "name": "yui-ui",
+  "version": "0.0.1",
   "private": false,
   "author": "jason",
   "description": "your own React component library using Rollup, TypeScript, Less and Storybook",
