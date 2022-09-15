@@ -1,0 +1,17 @@
+.icon-container{
+  height: 130px;
+  width: 164px;
+  background-color: rgba(204,204,204, 0);
+  border: 1px solid rgba(204,204,204, 0.2);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 22px;
+  padding-top: 16px; 
+  transition: all 0.3s;
+  cursor: pointer;
+  &:hover{
+    background-color: rgba(204,204,204, 0.1);
+  }
+}

@@ -1,0 +1,335 @@
+.storybook-demo > .yui-steps {
+  margin: 8px 8px 8px 0;
+}
+
+.yui-steps.ant-steps {
+  .ant-steps-item-icon{
+    position: relative;
+  }
+  // item default style
+  .ant-steps-item.yui-steps-item {
+    &.ant-steps-item-finish {
+      @include steps-item-style(
+        $steps-finish-color,
+
+        $steps-finish-color,
+        $steps-point-color,
+        $steps-finish-color,
+
+        $steps-finish-color,
+        $steps-point-color,
+        $steps-finish-color,
+        $steps-finish-color,
+
+        $steps-finish-color,
+        $steps-default-color
+      );
+    }
+    &.ant-steps-item-process {
+      @include steps-item-style(
+        $steps-process-color,
+
+        $steps-finish-color,
+        $steps-point-color,
+        $steps-finish-color,
+
+        $steps-finish-color,
+        $steps-point-color,
+        $steps-finish-color,
+        $steps-finish-color,
+
+        $steps-finish-color,
+        $steps-default-color
+      );
+    }
+    &.ant-steps-item-wait {
+      @include steps-item-style(
+        $steps-process-color,
+
+        $steps-point-color,
+        $steps-point-color,
+        $steps-waite-color,
+
+        $steps-process-color,
+        $steps-point-color,
+        $steps-point-color,
+        $steps-process-color,
+
+        $steps-default-color,
+        $steps-default-color
+      );
+    }
+    &.ant-steps-item-error {
+      @include steps-item-style(
+        $steps-process-color,
+
+        $steps-error-color,
+        $steps-point-color,
+        $steps-error-color,
+
+        $steps-error-color,
+        $steps-point-color,
+        $steps-error-color,
+        $steps-error-color,
+
+        $steps-error-color,
+        $steps-error-color
+      );
+    }
+    // onChange
+    &:not(.ant-steps-item-active):not(.ant-steps-item-process) {
+      .ant-steps-item-container[role='button']:hover {
+        .ant-steps-item-icon {
+          border-color: $steps-finish-color;
+          background-color: $steps-point-color;
+          .ant-steps-icon {
+            color: $steps-finish-color;
+            .ant-steps-icon-dot {
+              background: $steps-finish-color;
+            }
+          }
+        }
+        .ant-steps-item-content {
+          .ant-steps-item-title {
+            color: $steps-finish-color;
+            .ant-steps-item-subtitle {
+              color: $steps-finish-color;
+            }
+          }
+          .ant-steps-item-description {
+            color: $steps-finish-color;
+          }
+        }
+        .yui-custom-dot {
+          width: $steps-dot-wrapper-width;
+          height: $steps-dot-wrapper-width;
+          background-color: $steps-finish-color;
+          &::before {
+            width: $steps-dot-outer-width + 2;
+            height: $steps-dot-outer-width + 2;
+          }
+          &::after {
+            width: $steps-dot-inner-width;
+            height: $steps-dot-inner-width;
+            background: $steps-finish-color;
+          }
+        }
+        .yui-custom-large-dot {
+          border-color: $steps-finish-color;
+        }
+      }
+    }
+    
+    &.ant-steps-item-custom {
+      .ant-steps-item-icon {
+        min-width: 32px;
+        min-height: 32px;
+        line-height: unset;
+        .ant-steps-icon {
+          left: 0;
+        }
+      }
+    }
+  }
+
+   // large default style
+   &.yui-size-large {
+     @include steps-item-container-selector {
+      .ant-steps-item-icon {
+        border-width: $steps-large-border-width;
+        width: $steps-large-width;
+        height: $steps-large-width;
+        line-height: $steps-large-line-height;
+        .yui-custom-large-dot {
+          color: $steps-default-color;
+        }
+      }
+     }
+  }
+
+  // dot style
+  &.ant-steps-dot {
+    .ant-steps-item {
+      .ant-steps-item-container {
+        .ant-steps-item-icon {
+          background-color: transparent;
+        }
+      }
+    }
+    .ant-steps-item-tail{
+      padding: 0 !important;
+      &::after {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  }
+
+  // custom dot style
+  &.yui-progress-dot {
+    @include steps-item-container-selector {
+      .ant-steps-item-icon {
+        width: 1px;
+        height: 1px;
+        background-color: transparent !important;
+        border-color: transparent !important;
+      }
+    }
+    &.yui-size-large:not(.yui-text-layout-updown) {
+      @include steps-item-container-selector {
+        .ant-steps-item-icon {
+          height: 24px;
+        }
+      }
+    }
+   
+    .yui-custom-dot {
+      display: inline-block;
+      width: $steps-dot-outer-width;
+      height: $steps-dot-outer-width;
+      background-color: $steps-process-color;
+      border-radius: 50%;
+      @include position-center;
+      transition: width 0.1s, height 0.1s;
+
+      &::before {
+        content: '';
+        width: $steps-dot-inner-width;
+        height: $steps-dot-inner-width;
+        background-color: $steps-point-color;
+        border-radius: 50%;
+        @include position-center;
+        transition: width 0.2s, height 0.2s,  background-color 0.2s;
+      }
+      &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        background-color: $steps-finish-color;
+        border-radius: 50%;
+        @include position-center;
+        transition: width 0.2s, height 0.2s,  background-color 0.2s;
+      }
+    }
+
+    &.yui-size-small {
+      .ant-steps-item.yui-steps-item.ant-steps-item-process {
+        .yui-custom-dot {
+          width:$steps-dot-wrapper-width;
+          height:$steps-dot-wrapper-width;
+          &::before {
+            width: $steps-dot-outer-width;
+            height: $steps-dot-outer-width;
+          }
+        }
+      }
+    }
+
+    &.yui-size-middle {
+      .yui-custom-dot {
+        width:$steps-dot-wrapper-width;
+        height:$steps-dot-wrapper-width;
+        &::before {
+          width: $steps-dot-outer-width + 2;
+          height: $steps-dot-outer-width + 2;
+          background-color: $steps-point-color;
+        }
+        &::after {
+          width: $steps-dot-inner-width;
+          height: $steps-dot-inner-width;
+        }
+      }
+    }
+
+    &.yui-size-large {
+      .yui-custom-large-dot {
+        width:$steps-large-width;
+        height:$steps-large-width;
+        line-height: $steps-large-line-height;
+        background-color: $steps-point-color;
+        border: $steps-large-border-width solid $steps-finish-color;
+        border-radius: 50%;
+        @include position-center;
+        transition: border 0.3s;
+      }
+    }
+    &:not(.yui-text-layout-updown):not(.ant-steps-vertical) {
+      .ant-steps-item-tail{
+        top: -2px;
+      }
+    }
+  }
+
+  // text layout updown style
+  &.yui-text-layout-updown {
+    @include steps-text-updown-item(
+      $steps-updown-height,
+      $steps-updown-content-gap-bottom,
+      $steps-updown-content-gap-top,
+    );
+
+    &.ant-steps-dot {
+      @include steps-text-updown-item(
+        $steps-updown-dot-height,
+        $steps-updown-content-dot-gap-bottom,
+        $steps-updown-content-dot-gap-top
+      );
+    }
+    &.yui-size-large {
+      @include steps-text-updown-item(
+        $steps-updown-large-height,
+        $steps-updown-content-large-gap-bottom,
+        $steps-updown-content-large-gap-top
+      );
+    }
+    &.yui-size-middle {
+      @include steps-text-updown-item(
+        $steps-updown-dot-height,
+        $steps-updown-content-middle-gap-bottom,
+        $steps-updown-content-middle-gap-top
+      );
+    }
+  }
+
+  // vertical style
+  &.ant-steps-vertical {
+    @include steps-vertical-item-tail(
+      $steps-tail-vertical-default-top,
+      $steps-tail-vertical-default-left
+    );
+    &.ant-steps-dot {
+      @include steps-vertical-item-tail(
+        $steps-tail-vertical-dot-top,
+        $steps-tail-vertical-dot-left
+      );
+    }
+    &.yui-progress-dot {
+      @include steps-item-container-selector {
+        .ant-steps-item-icon {
+          width: 11px;
+          height: 11px;
+        }
+      }
+      @include steps-vertical-item-tail(
+        $steps-tail-vertical-dot-top,
+        $steps-tail-vertical-yui-dot-left
+      );
+    }
+    &.yui-size-large {
+      @include steps-vertical-item-tail(
+        $steps-tail-vertical-large-top,
+        $steps-tail-vertical-large-left
+      );
+      @include steps-item-container-selector {
+        .ant-steps-item-icon {
+          width: 48px;
+          height: 48px;
+        }
+      }
+      .yui-custom-large-dot {
+        @include position-center;
+        top: calc(50% + 15px);
+      }
+    }
+  }
+}

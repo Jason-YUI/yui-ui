@@ -1,0 +1,51 @@
+.yui-divider.ant-divider {
+  &.ant-divider-horizontal {
+    line-height: $divider-line-height;
+    border-top: $divider-border-top;
+    margin: $divider-margin;
+    width: $divider-width;
+    min-width: $divider-width;
+  }
+  &.ant-divider-vertical {
+    border-left: $divider-border-left;
+  }
+  &.ant-divider-dashed {
+    border-style: dashed !important;
+  }
+  &.ant-divider-with-text {
+    border-top: $divider-border-top-text;
+    padding: 0 4px;
+    width: 100%;
+    span {
+      color: $divider-color;
+      padding: 0 4px !important;
+      font-family: $divider-font-family;
+      font-size: 12px;
+      letter-spacing: 0;
+      font-weight: 500;
+    }
+  }
+  &.ant-divider-horizontal.ant-divider-with-text-left {
+    &::before {
+      width: 8px;
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: auto;
+    }
+    &::after {
+      width: calc(100% - 8px);
+    }
+  }
+
+  &.ant-divider-horizontal.ant-divider-with-text-right {
+    &::before {
+      width: calc(100% - 8px);
+    }
+    &::after {
+      width: 8px;
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: auto;
+    }
+  }
+}

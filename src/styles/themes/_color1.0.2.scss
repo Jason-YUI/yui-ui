@@ -1,0 +1,193 @@
+// primary
+$basic-background:                                 #060707 !default;
+$element-background:                               #121A19 !default;
+$basic-plate:                                      #172422 !default;
+$part-plate:                                       #263735 !default;
+$basic-btn:                                        #325850 !default;
+$basic-filter:                                     #325850 !default;
+$basic-title:                                      #325850 !default;
+$btn-hover:                                        #133E38 !default;
+$mouse-hover:                                      #133E38 !default;
+$tittle-word:                                      #3B9078 !default;
+$new-data:                                         #241F0C !default;
+$baisc-disable:                                    #585B5A !default;
+// - linear
+$button-linear-0:                                  linear-gradient(0deg, #3B9078, #325850) !default;
+$button-linear-90:                                 linear-gradient(90deg, #3B9078, #325850) !default;
+$button-linear-180:                                linear-gradient(180deg, #3B9078, #325850) !default;
+$button-linear-270:                                linear-gradient(270deg, #3B9078, #325850) !default;
+$button-linear-360:                                linear-gradient(360deg, #3B9078, #325850) !default;
+$high-light-area-linear-0:                         linear-gradient(0deg, #F9C152, #F38A00) !default;
+$high-light-area-linear-90:                        linear-gradient(90deg, #F9C152, #F38A00) !default;
+$high-light-area-linear-180:                       linear-gradient(180deg, #F9C152, #F38A00) !default;
+$high-light-area-linear-270:                       linear-gradient(270deg, #F9C152, #F38A00) !default;
+$high-light-area-linear-360:                       linear-gradient(360deg, #F9C152, #F38A00) !default;
+
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+
+// words color
+$words-normal:                                     #FFEBC8 !default;
+$words-high-light:                                 #F9C152 !default;
+$words-supporting:                                 #8F9598 !default;
+$words-disable:                                    #585B5A !default;
+$words-title:                                      #3B9078 !default;
+$words-black:                                      #060707 !default;
+$words-error:                                      #ff4d4f !default;
+
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+
+// client
+// - guoli - 国立
+$broker-guoli:                                     #457194 !default;
+$broker-guoli-linear-0:                            linear-gradient(0deg,   #7BAAC6, #457194) !default;
+$broker-guoli-linear-90:                           linear-gradient(90deg,  #7BAAC6, #457194) !default;
+$broker-guoli-linear-180:                          linear-gradient(180deg, #7BAAC6, #457194) !default;
+$broker-guoli-linear-270:                          linear-gradient(270deg, #7BAAC6, #457194) !default;
+$broker-guoli-linear-360:                          linear-gradient(360deg, #7BAAC6, #457194) !default;
+// - guoji - 国际
+$broker-guoji:                                     #BD5555 !default;
+$broker-guoji-linear-0:                            linear-gradient(0deg,   #E08E8E, #BD5555) !default;
+$broker-guoji-linear-90:                           linear-gradient(90deg,  #E08E8E, #BD5555) !default;
+$broker-guoji-linear-180:                          linear-gradient(180deg, #E08E8E, #BD5555) !default;
+$broker-guoji-linear-270:                          linear-gradient(270deg, #E08E8E, #BD5555) !default;
+$broker-guoji-linear-360:                          linear-gradient(360deg, #E08E8E, #BD5555) !default;
+// - pingan - 平安
+$broker-pingan:                                    #F76920 !default;
+$broker-pingan-linear-0:                           linear-gradient(0deg,   #FCA243, #F76920) !default;
+$broker-pingan-linear-90:                          linear-gradient(90deg,  #FCA243, #F76920) !default;
+$broker-pingan-linear-180:                         linear-gradient(180deg, #FCA243, #F76920) !default;
+$broker-pingan-linear-270:                         linear-gradient(270deg, #FCA243, #F76920) !default;
+$broker-pingan-linear-360:                         linear-gradient(360deg, #FCA243, #F76920) !default;
+// - xintang - 信唐
+$broker-xintang:                                   #8C5AA5 !default;
+$broker-xintang-linear-0:                          linear-gradient(0deg,   #C093D1, #8C5AA5) !default;
+$broker-xintang-linear-90:                         linear-gradient(90deg,  #C093D1, #8C5AA5) !default;
+$broker-xintang-linear-180:                        linear-gradient(180deg, #C093D1, #8C5AA5) !default;
+$broker-xintang-linear-270:                        linear-gradient(270deg, #C093D1, #8C5AA5) !default;
+$broker-xintang-linear-360:                        linear-gradient(360deg, #C093D1, #8C5AA5) !default;
+// - zhongcheng - 中诚
+$broker-xintang:                                   #708D20 !default;
+$broker-xintang-linear-0:                          linear-gradient(0deg,   #A9C143, #708D20) !default;
+$broker-xintang-linear-90:                         linear-gradient(90deg,  #A9C143, #708D20) !default;
+$broker-xintang-linear-180:                        linear-gradient(180deg, #A9C143, #708D20) !default;
+$broker-xintang-linear-270:                        linear-gradient(270deg, #A9C143, #708D20) !default;
+$broker-xintang-linear-360:                        linear-gradient(360deg, #A9C143, #708D20) !default;
+// - shangtian - 上田
+$broker-shangtian:                                 #067E6B !default;
+$broker-shangtian-linear-0:                        linear-gradient(0deg,   #0EB5A4, #067E6B) !default;
+$broker-shangtian-linear-90:                       linear-gradient(90deg,  #0EB5A4, #067E6B) !default;
+$broker-shangtian-linear-180:                      linear-gradient(180deg, #0EB5A4, #067E6B) !default;
+$broker-shangtian-linear-270:                      linear-gradient(270deg, #0EB5A4, #067E6B) !default;
+$broker-shangtian-linear-360:                      linear-gradient(360deg, #0EB5A4, #067E6B) !default;
+// - shangjiaosuo - 上交所
+$broker-shangjiaosuo:                              #BA6752 !default;
+$broker-shangjiaosuo-linear-0:                     linear-gradient(0deg,   #EF9680, #BA6752) !default;
+$broker-shangjiaosuo-linear-90:                    linear-gradient(90deg,  #EF9680, #BA6752) !default;
+$broker-shangjiaosuo-linear-180:                   linear-gradient(180deg, #EF9680, #BA6752) !default;
+$broker-shangjiaosuo-linear-270:                   linear-gradient(270deg, #EF9680, #BA6752) !default;
+$broker-shangjiaosuo-linear-360:                   linear-gradient(360deg, #EF9680, #BA6752) !default;
+// - cfets - Cfets
+$broker-cfets:                                     #3E3EFF !default;
+$broker-cfets-linear-0:                            linear-gradient(0deg,   #7272FF, #3E3EFF) !default;
+$broker-cfets-linear-90:                           linear-gradient(90deg,  #7272FF, #3E3EFF) !default;
+$broker-cfets-linear-180:                          linear-gradient(180deg, #7272FF, #3E3EFF) !default;
+$broker-cfets-linear-270:                          linear-gradient(270deg, #7272FF, #3E3EFF) !default;
+$broker-cfets-linear-360:                          linear-gradient(360deg, #7272FF, #3E3EFF) !default;
+
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+
+// charts
+$charts-h1:                                        #B8002A !default;
+$charts-h2:                                        #E6433F !default;
+$charts-h3:                                        #F28036 !default;
+$charts-h4:                                        #FAC246 !default;
+$charts-h5:                                        #FC8E9F !default;
+$charts-h6:                                        #FABE95 !default;
+$charts-h7:                                        #F7CF86 !default;
+$charts-h8:                                        #FFEBC8 !default;
+$charts-h9:                                        #B3319B !default;
+$charts-h10:                                       #7846FA !default;
+$charts-h11:                                       #1600FF !default;
+$charts-h12:                                       #8D5B33 !default;
+$charts-h13:                                       #79B070 !default;
+$charts-h14:                                       #2DA93C !default;
+$charts-h15:                                       #5CD5DF !default;
+$charts-h16:                                       #4CA3FB !default;
+
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+
+// font
+// - 大小
+$font-size-base:                                   12px !default; 
+$font-size-max:                                    32px !default;
+$font-size-lg:                                     24px !default;
+$font-size-medium:                                 16px !default;
+$font-size-sm:                                     10px !default;
+$font-size-root:                                   null !default;
+// - 字体
+$font-family-sans-serif:                           Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-base:                                 $font-family-sans-serif !default;
+// - 字重
+$font-weight-lighter:                              lighter !default;
+$font-weight-light:                                300 !default;
+$font-weight-normal:                               400 !default;
+$font-weight-bold:                                 700 !default;
+$font-weight-bolder:                               bolder !default;
+$font-weight-base:                                 500 !default;
+
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+
+// 行高
+$line-height-base:                                 24px !default;
+$line-height-lg:                                   32px !default;
+$line-height-sm:                                   16px !default;
+$line-height-border:                               22px !default;
+
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+
+// 链接
+$link-color:                                       $words-normal !default;
+$link-hover-color:                                 $words-high-light !default;
+$link-pressed-color:                               $words-high-light !default;
+$link-disable-color:                               $words-disable !default;
+$link-decoration-none:                             none !default;
+$link-decoration:                                  underline !default;
+$link-hover-decoration:                            underline !default;
+
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+
+// body
+$body-bg:                                          $basic-background !default;
+$body-color:                                       $words-normal !default;
+$body-text-align:                                  null !default;
+
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+
+// 边框 和 border radius
+$border-width:                                     1px !default;
+$border-radius:                                    2px !default;
+$border-radius-lg:                                 4px !default;
+$border-dropdown-color:                            #3B9078 !default;
+
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+
+// box阴影
+$box-shadow:                                      0 0 24px 0 rgba(255,235,200,0.30) !default;

@@ -1,0 +1,105 @@
+// primary
+$basic-background:          #060707 !default;
+$element-background:        #0c0f0e !default;
+$basic-plate:               #101414 !default;
+$part-plate:                #1e2423 !default;
+$basic-btn:                 #253330 !default;
+$btn-hover:                 #0a2420 !default;
+$tittle-word:               #136c5e !default;
+// 渐变色
+$button:                    #252b23 !default;
+$high-light-area-top:       #F38A00 !default;
+$high-light-area-bottom:    #F9C152 !default;
+$high-light-area-right:     #ffb100 !default;
+$new-data:                  #241F0C !default;
+
+// ----------------------------------------------------------------
+
+// words color
+$words-normal:              #FFEBC8 !default;
+$words-high-light:          #F9C152 !default;
+$words-supporting:          #8F9598 !default;
+$words-disable:             #4A4D4C !default;
+$words-title:               #136C5E !default;
+$words-black:               #000000 !default;
+$words-error:               #ff4d4f !default;
+
+// ----------------------------------------------------------------
+
+$white:                     #ffffff !default;
+$gray-100:                  #f8f9fa !default;
+$gray-200:                  #e9ecef !default;
+$gray-300:                  #dee2e6 !default;
+$gray-400:                  #ced4da !default;
+$gray-500:                  #adb5bd !default;
+$gray-600:                  #6c757d !default;
+$gray-700:                  #495057 !default;
+$gray-800:                  #343a40 !default;
+$gray-900:                  #212529 !default;
+$black:                     #000000 !default;
+
+// ----------------------------------------------------------------
+
+// 字体大小
+$font-size-base:              12px !default; 
+$font-size-max:               32px !default;
+$font-size-lg:                24px !default;
+$font-size-medium:            16px !default;
+$font-size-sm:                10px !default;
+$font-size-root:              null !default;
+
+// ----------------------------------------------------------------
+
+// 字体
+$font-family-sans-serif:      Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-base:            $font-family-sans-serif !default;
+
+// ----------------------------------------------------------------
+
+// 字重
+$font-weight-lighter:         lighter !default;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
+$font-weight-bolder:          bolder !default;
+$font-weight-base:            500 !default;
+
+// ----------------------------------------------------------------
+
+// 行高
+$line-height-base:            24px !default;
+$line-height-lg:              32px !default;
+$line-height-sm:              16px !default;
+$line-height-border:          22px !default;
+
+// ----------------------------------------------------------------
+
+// 链接
+$link-color:                              $words-normal !default;
+$link-hover-color:                        $words-high-light !default;
+$link-pressed-color:                      $words-high-light !default;
+$link-disable-color:                      $words-disable !default;
+
+$link-decoration-none:                    none !default;
+$link-decoration:                         underline !default;
+$link-hover-decoration:                   underline !default;
+
+// ----------------------------------------------------------------
+
+// body
+$body-bg:                   $basic-background !default;
+$body-color:                $words-normal !default;
+$body-text-align:           null !default;
+
+// ----------------------------------------------------------------
+
+// 边框 和 border radius
+
+$border-width:                1px !default;
+$border-radius:               2px !default;
+$border-radius-lg:            4px !default;
+
+// ----------------------------------------------------------------
+
+// box阴影
+$box-shadow:                                      unset !default;

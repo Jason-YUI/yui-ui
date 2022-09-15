@@ -1,76 +1,107 @@
 {
   "name": "yui-ui",
   "version": "0.0.1",
-  "private": false,
   "author": "jason",
-  "description": "your own React component library using Rollup, TypeScript, Less and Storybook",
-  "main": "build/index.js",
-  "module": "build/index.esm.js",
-  "typings": "build/types/packages/index.d.ts",
-  "files": [
-    "build"
+  "private": false,
+  "main": "dist/src/index.js",
+  "module": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "license": "MIT",
+  "keywords": [
+    "Component",
+    "UI",
+    "React"
   ],
-  "types": "build/index.d.ts",
-  "scripts": {
-    "prettier": "prettier --write 'packages/**/*.{ts,tsx,less}'",
-    "_____comment": "npm run git -- 'commit-msg'  so you can push and update by a auto way",
-    "git": "git add . && git commit -m",
-    "postgit": "npm run build && npm version patch && npm publish && git push",
-    "sb": "start-storybook -p 9000",
-    "build": "rimraf build/* && rollup -c",
-    "build:sb": "build-storybook -c .storybook -o docs"
-  },
-  "peerDependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "typescript": "3.8.3"
-  },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "typescript": "3.8.3"
+    "@ant-design/icons": "^4.7.0",
+    "@storybook/addons": "^6.4.13",
+    "@storybook/theming": "^6.4.13",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.0.3",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "antd": "~4.20.0",
+    "copy-to-clipboard": "^3.3.1",
+    "echarts": "^5.3.1",
+    "fetch-jsonp": "^1.2.1",
+    "immutability-helper": "^3.1.1",
+    "moment": "^2.29.1",
+    "node-sass": "^7.0.1",
+    "react": "^17.0.2",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "react-dom": "^17.0.2",
+    "react-draggable": "^4.4.4",
+    "react-icons": "^4.3.1",
+    "react-markdown": "^8.0.0",
+    "react-scripts": "5.0.0",
+    "typescript": "^4.5.4",
+    "web-vitals": "^2.1.2"
   },
-  "devDependencies": {
-    "@rollup/plugin-babel": "^5.3.0",
-    "@rollup/plugin-commonjs": "^17.1.0",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^11.2.1",
-    "@storybook/addon-actions": "^6.4.13",
-    "@storybook/addon-docs": "^6.4.14",
-    "@storybook/addon-info": "^5.3.21",
-    "@storybook/addon-knobs": "^6.4.0",
-    "@storybook/react": "^6.3.7",
-    "@types/react": "^16.14.14",
-    "@types/react-dom": "^16.9.14",
-    "babel-loader": "^8.2.2",
-    "babel-preset-react-app": "^10.0.0",
-    "husky": "^4.3.0",
-    "less": "^4.1.2",
-    "less-loader": "^5.0.0",
-    "lint-staged": "^10.5.3",
-    "prettier": "^2.2.1",
-    "rimraf": "^3.0.0",
-    "rollup": "^2.56.3",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-copy": "^3.4.0",
-    "rollup-plugin-eslint": "^7.0.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^3.1.8",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.29.0",
-    "style-loader": "^1.3.0",
-    "ts-loader": "^6.0.4"
+  "scripts": {
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "clean": "rimraf ./dist",
+    "clean-docs": "rimraf ./storybook-static",
+    "build-ts": "tsc -p tsconfig.build.json",
+    "build-css": "node-sass ./src/styles/index.scss ./dist/src/styles/global/index.css",
+    "cp-public": "cp -R ./public ./dist",
+    "build": "npm run clean && npm run build-ts && npm run build-css && npm run cp-public",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "npm run clean-docs && build-storybook -s public",
+    "prepublishOnly": "npm run build",
+    "start": "npm run storybook"
   },
-  "lint-staged": {
-    "packages/**/*.{ts,tsx,less}": [
-      "prettier --write"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "~6.4.13",
+    "@storybook/addon-docs": "~6.4.13",
+    "@storybook/addon-essentials": "~6.4.13",
+    "@storybook/addon-links": "~6.4.13",
+    "@storybook/builder-webpack5": "~6.4.13",
+    "@storybook/manager-webpack5": "~6.4.13",
+    "@storybook/node-logger": "~6.4.13",
+    "@storybook/preset-create-react-app": "~4.0.0",
+    "@storybook/preset-scss": "~1.0.3",
+    "@storybook/react": "~6.4.13",
+    "@types/node": "^17.0.9",
+    "css-loader": "^6.5.1",
+    "rimraf": "^3.0.2",
+    "sass": "^1.48.0",
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.66.0"
   }
 }

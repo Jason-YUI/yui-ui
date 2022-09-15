@@ -1,0 +1,246 @@
+.storybook-demo > .yui-btn {
+  margin: 8px 8px 8px 0;
+}
+
+// ----------------------------------------------------------------
+
+.yui-btn.ant-btn {
+  display: inline-block;
+  vertical-align: top;
+  height: 24px;
+  font-weight: $btn-font-weight;
+  line-height: $btn-line-height;
+  border: none;
+  box-sizing: border-box;
+  transition: none;
+  cursor: pointer;
+
+  .anticon {
+    line-height: 0;
+    vertical-align: -0.2em;
+  }
+
+  @include button-size(
+    $btn-padding-y,
+    $btn-padding-x,
+    $btn-font-size,
+    $border-radius
+  );
+
+  @include button-style(
+    $button-linear-180,
+    $words-normal,
+    $btn-background-hover,
+    $words-normal,
+    $btn-background-active,
+    $words-normal,
+    $btn-background-disabled,
+    $words-disable
+  );
+
+  &.yui-btn-work-default {
+    color: $words-high-light;
+    background: $button-linear-180;
+  }
+
+  &.yui-btn-work-high-light {
+    color: $words-black;
+    background: $high-light-area-linear-180;
+  }
+
+  &.yui-btn-icon-only {
+    padding-left: 6px;
+    padding-right: 0;
+    @include button-style(
+      transparent,
+      $words-normal,
+      $btn-background-hover,
+      $words-normal,
+      $btn-background-active,
+      $words-normal,
+      transparent,
+      $words-disable
+    );
+
+    &.yui-btn-work-default {
+      color: $words-high-light;
+      background: transparent;
+    }
+    &.yui-btn-work-high-light {
+      color: $words-high-light;
+      background: transparent;
+    }
+  }
+}
+
+// ----------------------------------------------------------------
+
+// animation
+[ant-click-animating-without-extra-node="true"]::after,
+.ant-click-animating-node {
+  box-shadow: none !important;
+}
+
+// loading
+.yui-btn.ant-btn.ant-btn-loading::before {
+  display: none;
+}
+
+// primary
+.yui-btn.yui-btn-primary {
+  text-shadow: none;
+  box-shadow: none;
+  @include button-style(
+    $btn-background-primary,
+    $words-normal,
+    $btn-background-hover,
+    $words-normal,
+    $btn-background-active,
+    $words-normal,
+    $btn-background-disabled,
+    $words-disable
+  );
+
+  &.yui-btn-work-default,
+  &.yui-btn-work-high-light {
+    @include button-style(
+      $btn-background-primary,
+      $words-high-light,
+      $btn-background-hover,
+      $words-normal,
+      $btn-background-active,
+      $words-normal,
+      $btn-background-disabled,
+      $words-disable
+    );
+  }
+
+}
+
+// lead
+.yui-btn.yui-btn-lead {
+  display: inline-flex;
+  padding-left: $btn-padding-lead-left;
+  padding-right: 6px;
+  align-items: center;
+  .lead-child-box {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+  }
+  @include button-style(
+    $btn-background-primary,
+    $words-normal,
+    $btn-background-hover,
+    $words-normal,
+    $btn-background-active,
+    $words-normal,
+    $btn-background-disabled,
+    $words-disable
+  );
+  &.yui-btn-work-default,
+  &.yui-btn-work-high-light {
+    @include button-style(
+      $btn-background-primary,
+      $words-normal,
+      $btn-background-hover,
+      $words-normal,
+      $btn-background-active,
+      $words-normal,
+      $btn-background-disabled,
+      $words-disable
+    );
+  }
+}
+
+// gray
+.yui-btn.yui-btn-gray {
+  @include button-style(
+    $btn-background-gray,
+    $words-normal,
+    $btn-background-gray-hover,
+    $words-normal,
+    $btn-background-gray-active,
+    $words-normal,
+    $btn-background-gray,
+    $words-supporting
+  );
+  &.yui-btn-work-default,
+  &.yui-btn-work-high-light {
+    @include button-style(
+      $btn-background-gray,
+      $words-normal,
+      $btn-background-gray-hover,
+      $words-normal,
+      $btn-background-gray-active,
+      $words-normal,
+      $btn-background-gray,
+      $words-supporting
+  );
+  }
+}
+
+// link
+.yui-btn.yui-btn-link {
+  background-color: transparent;
+  @include button-style(
+    $btn-background-link,
+    $link-color,
+    $btn-background-link-hover,
+    $link-hover-color,
+    $btn-background-link-active,
+    $link-hover-color,
+    transparent,
+    $link-disable-color
+  );
+  span {
+    text-decoration: $link-decoration;
+  }
+  padding: 0;
+  &.yui-btn-work-default,
+  &.yui-btn-work-high-light {
+    @include button-style(
+      transparent,
+      $link-hover-color,
+      transparent,
+      $link-hover-color,
+      transparent,
+      $link-hover-color,
+      transparent,
+      $link-disable-color
+    );
+  }
+}
+
+// text
+.yui-btn.yui-btn-text {
+  background-color: transparent;
+  @include button-style(
+    transparent,
+    $words-normal,
+    $btn-background-hover,
+    $words-normal,
+    $btn-background-active,
+    $words-normal,
+    transparent,
+    $words-disable
+  );
+
+  &.yui-btn-work-default,
+  &.yui-btn-work-high-light {
+    @include button-style(
+      $btn-background-primary,
+      $words-high-light,
+      $btn-background-hover,
+      $words-normal,
+      $btn-background-active,
+      $words-normal,
+      transparent,
+      $words-disable
+    );
+  }
+}

@@ -1,0 +1,79 @@
+.yui-tooltip.ant-tooltip {
+
+  &.ant-tooltip-placement-top,
+  &.ant-tooltip-placement-topLeft,
+  &.ant-tooltip-placement-topRight {
+    padding-bottom: $tooltip-target-gap;
+  }
+
+  &.ant-tooltip-placement-left,
+  &.ant-tooltip-placement-leftTop,
+  &.ant-tooltip-placement-leftBottom {
+    padding-right: $tooltip-target-gap;
+  }
+
+  &.ant-tooltip-placement-right,
+  &.ant-tooltip-placement-rightTop,
+  &.ant-tooltip-placement-rightBottom {
+    padding-left: $tooltip-target-gap;
+  }
+
+  &.ant-tooltip-placement-bottom,
+  &.ant-tooltip-placement-bottomLeft,
+  &.ant-tooltip-placement-bottomRight {
+    padding-top: $tooltip-target-gap;
+  }
+
+
+  &.yui-tooltip-border-thick {
+    .ant-tooltip-content {
+      border-width: 2px;
+
+      .ant-tooltip-arrow .ant-tooltip-arrow-content {
+        border-width: 2px;
+      }
+    }
+  }
+
+  &.yui-tooltip-border-thin {
+    .ant-tooltip-content {
+      border-width: 1px;
+
+      .ant-tooltip-arrow .ant-tooltip-arrow-content {
+        border-width: 1px;
+      }
+    }
+  }
+
+  .ant-tooltip-content {
+    padding: 0 8px;
+    background: $tooltip-background-color;
+    border: $tooltip-border;
+    box-shadow: $tooltip-box-shadow;
+    border-radius: $tooltip-border-radius;
+
+    .ant-tooltip-inner {
+      padding: 0;
+      min-width: 5px;
+      min-height: 5px;
+      background: none;
+      font-family: $font-family-base;
+      font-size: $font-size-base;
+      color: $words-normal;
+      text-align: center;
+      line-height: $line-height-base;
+      font-weight: $font-weight-base;
+      box-shadow: unset;
+    }
+  }
+
+  &.yui-tooltip-without-arrow .ant-tooltip-arrow {
+    display: none;
+  }
+
+  .ant-tooltip-arrow .ant-tooltip-arrow-content {
+    --antd-arrow-background-color: none;
+    background-color: $tooltip-background-color;
+    border: $tooltip-border;
+  }
+}

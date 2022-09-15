@@ -1,0 +1,41 @@
+.yui-filter {
+  display: flex;
+  flex-wrap: wrap;
+}
+.yui-filter-item {
+  height: $filter-item-height;
+  line-height: $filter-item-height - 2;
+  margin-bottom: 4px;
+  padding: 0 16px;
+  border: 1px solid transparent;
+  background-color: $filter-item-base-bg;
+  border-radius: $border-radius;
+  color: $filter-item-color;
+  cursor: pointer;
+
+  &.yui-filter-item-active {
+    color: $filter-item-checked-color;
+    border-color: $filter-item-checked-color;
+    &.yui-filter-item-disabled {
+      border-color: $filter-item-disabled-border;
+    }
+  }
+
+  &:hover {
+    background-color: $filter-item-hover-bg;
+  }
+  &:active {
+    background-color: $filter-item-active-bg;
+  }
+
+  &.yui-filter-item-disabled {
+    cursor: not-allowed;
+    background-color: $filter-item-base-bg;
+    color:$filter-item-disabled-color;
+  }
+
+  &:not(:last-of-type) {
+    margin-right: 4px;
+  }
+  
+}

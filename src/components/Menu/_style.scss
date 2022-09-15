@@ -1,0 +1,196 @@
+.yui-menu.ant-menu {
+  @include menu-color($words-normal, $menu-base-background);
+  font-size: $font-size-base;
+  border-color: $menu-base-border-color;
+  padding: $menu-small-padding 0;
+  .ant-menu-item, .ant-menu-item-group-title {
+    font-size: $font-size-base;
+    color: $words-normal;
+  }
+  .ant-menu-item .ant-menu-item-icon + span,
+  .ant-menu-submenu-title .ant-menu-item-icon + span,
+  .ant-menu-item .anticon + span,
+  .ant-menu-submenu-title .anticon + span {
+    margin-left: $menu-base-margin-small;
+  }
+  .ant-menu-item-divider {
+    border-color: $menu-divider-color;
+  }
+  // disabled
+  .ant-menu-item-disabled > .ant-menu-submenu-title,
+  .ant-menu-submenu-disabled > .ant-menu-submenu-title,
+  .ant-menu-item-disabled,
+  .ant-menu-submenu-disabled {
+    color: $words-disable !important;
+  }
+  .ant-menu-item-group-list .ant-menu-submenu-title,
+  .ant-menu-submenu-title {
+    padding-right: 16px;
+  }
+  .ant-menu-item.ant-menu-item-disabled:hover {
+    background: $menu-base-background-transparent;
+  }
+
+  .ant-menu-sub.ant-menu-inline {
+    @include menu-color($words-normal, $menu-base-background);
+  }
+  
+  .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected,
+  .ant-menu-item.ant-menu-item-selected {
+    @include menu-color($words-high-light, $menu-base-background);
+  }
+  .ant-menu-item:hover,
+  .ant-menu-submenu-title:hover  {
+    background-color: $menu-base-background-hover;
+  }
+  
+  .ant-menu-submenu-selected
+    > .ant-menu-submenu-title
+    > .ant-menu-submenu-arrow,
+  .ant-menu-submenu:hover
+    > .ant-menu-submenu-title
+    > .ant-menu-submenu-expand-icon,
+  .ant-menu-submenu:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow,
+  .ant-menu-submenu-selected {
+    color: $words-high-light;
+  }
+  .ant-menu-item::after {
+    border-right-color: $menu-base-background-transparent;
+  }
+  .ant-menu-item:hover,
+  .ant-menu-item-active,
+  .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
+  .ant-menu-submenu-active,
+  .ant-menu-submenu-title:hover {
+    color: $words-high-light;
+    .ant-menu-submenu-arrow {
+      color: $words-high-light;
+    }
+  }
+  .ant-menu-item:active,
+  .ant-menu-submenu-title:active {
+    background: $menu-base-background-transparent;
+  }
+  .ant-menu-submenu > .ant-menu-submenu-title,
+  .ant-menu-item,
+  .ant-menu-sub.ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
+    @include menu-height($menu-item-height, $line-height-base);
+  }
+  .ant-menu-submenu > .ant-menu-submenu-title {
+    margin: 0;
+  }
+  .ant-menu-sub.ant-menu-inline > .ant-menu-item,
+  .ant-menu-sub.ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
+    @include menu-height($menu-item-height, $line-height-base);
+    margin: $menu-base-margin 0;
+    font-size: $font-size-base;
+  }
+  .ant-menu-item,
+  .ant-menu-submenu {
+    margin: 8px 0 !important;
+  }
+
+  &.ant-menu-vertical {
+    .ant-menu-submenu-expand-icon,
+    .ant-menu-submenu-arrow {
+      color: $words-normal;
+    }
+  }
+}
+
+// horizontal
+.yui-menu.ant-menu-horizontal {
+  padding: 0;
+
+  .ant-menu-item:hover,
+  .ant-menu-submenu:hover {
+    color: $words-high-light;
+    background-color: $menu-base-background-hover;
+  }
+  .ant-menu-item-active,
+  .ant-menu-submenu-active,
+  .ant-menu-item-open,
+  .ant-menu-submenu-open,
+  .ant-menu-item-selected,
+  .ant-menu-submenu-selected {
+    color: $words-high-light !important;
+  }
+  .ant-menu-item:hover::after,
+  .ant-menu-submenu:hover::after,
+  .ant-menu-item-active::after,
+  .ant-menu-submenu-active::after,
+  .ant-menu-item-open::after,
+  .ant-menu-submenu-open::after,
+  .ant-menu-item-selected::after,
+  .ant-menu-submenu-selected::after {
+    border-bottom-color: $menu-base-background-transparent !important;
+  }
+  .ant-menu-submenu-disabled:hover {
+    background-color: $menu-base-background-transparent;
+  }
+}
+
+// inline-collapsed
+.yui-menu.ant-menu.ant-menu-inline-collapsed {
+  .ant-menu-item .anticon,
+  .ant-menu-submenu > .ant-menu-submenu-title .anticon {
+    line-height: 28px;
+  }
+}
+
+// 无法为mode为horizontal的弹出子菜单加类名，故改变全局样式
+.ant-menu-submenu.ant-menu-submenu-popup {
+  .ant-menu {
+    font-size: $font-size-base;
+    @include menu-color($words-normal, $menu-base-background);
+  }
+  .ant-menu-vertical .ant-menu-submenu-selected,
+  .ant-menu-vertical-left .ant-menu-submenu-selected,
+  .ant-menu-vertical-right .ant-menu-submenu-selected {
+    color: $words-high-light;
+    .ant-menu-submenu-expand-icon,
+    .ant-menu-submenu-arrow {
+      color: $words-high-light;
+    }
+  }
+  .ant-menu-submenu-expand-icon,
+  .ant-menu-submenu-arrow {
+    color: $words-normal;
+  }
+  .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    @include menu-color($words-high-light, $menu-base-background);
+  }
+  .ant-menu-submenu:hover
+    > .ant-menu-submenu-title
+    > .ant-menu-submenu-expand-icon,
+  .ant-menu-submenu:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow,
+  .ant-menu-item:hover,
+  .ant-menu-item-active,
+  .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
+  .ant-menu-submenu-active,
+  .ant-menu-submenu-title:hover {
+    @include menu-color($words-high-light, $menu-base-background-hover);
+    .ant-menu-submenu-arrow {
+      color: $words-high-light;
+    }
+  }
+  .ant-menu-vertical > .ant-menu-item,
+  .ant-menu-vertical-left > .ant-menu-item,
+  .ant-menu-vertical-right > .ant-menu-item,
+  .ant-menu-inline > .ant-menu-item,
+  .ant-menu-vertical > .ant-menu-submenu > .ant-menu-submenu-title,
+  .ant-menu-vertical-left > .ant-menu-submenu > .ant-menu-submenu-title,
+  .ant-menu-vertical-right > .ant-menu-submenu > .ant-menu-submenu-title,
+  .ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
+    @include menu-height($menu-item-height, $line-height-base);
+  }
+
+  .ant-menu-item-disabled,
+  .ant-menu-submenu-disabled {
+    color: $words-disable !important;
+    &:hover {
+      background: $menu-base-background-transparent;
+    }
+  }
+}
+

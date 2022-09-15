@@ -1,0 +1,1103 @@
+// global
+@mixin flex-center($direction:row) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+}
+
+@mixin position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin position-vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin position-horizontal-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin dropdown-box-wrapper {
+  border: 1px solid $border-dropdown-color;
+  box-shadow: $box-shadow;
+  background-color: $element-background;
+}
+
+@mixin text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin input-selection(
+  $selection-bg: $words-high-light,
+  $selection-color: $words-black
+) {
+  &::selection{
+    background: $selection-bg !important;
+    color: $selection-color !important;
+  }
+  input,textarea {
+    &::selection{
+      background: $selection-bg !important;
+      color: $selection-color !important;
+    }
+  }
+}
+// --------------------------------------------------------------------
+
+// button
+@mixin button-size($padding-y, $padding-x, $font-size, $border-raduis) {
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+  border-radius: $border-raduis;
+}
+
+@mixin button-style(
+  $background,
+  $color,
+  $hover-background,
+  $hover-color,
+  $active-background,
+  $active-color,
+  $disable-background,
+  $disable-color
+) {
+  color: $color;
+  background: $background;
+  &:hover {
+    color: $hover-color !important;
+    background: $hover-background !important;
+  }
+  &:active,
+  &.active {
+    color: $active-color !important;
+    background: $active-background !important;
+  }
+  &:focus {
+    color: $color;
+    background: $background;
+  }
+  &:disabled,
+  &.disabled,
+  &.ant-btn[disabled] {
+    * {
+      cursor: not-allowed !important;
+      color: $disable-color !important;
+      background: $disable-background !important;
+    }
+    cursor: not-allowed !important;
+    color: $disable-color !important;
+    background: $disable-background !important;
+  }
+}
+
+// ----------------------------------------------------------------
+
+// input
+@mixin input-size($padding-y, $padding-x, $font-size, $border-raduis) {
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+  border-radius: $border-raduis;
+}
+
+@mixin input-style(
+  // normal
+  $background,
+  $color,
+  $border,
+  // hover
+  $hover-background,
+  $hover-color,
+  $hover-border,
+  // focus
+  $focus-background,
+  $focus-color,
+  $focus-border,
+  // disabled
+  $disabled-background,
+  $disabled-color,
+  $disabled-border
+) {
+  // normal
+  background: $background;
+  color: $color;
+  border: $border;
+  // normal style -> link clear icon style
+  .anticon.ant-input-clear-icon-has-suffix,
+  &.anticon.ant-input-clear-icon-has-suffix,
+  .anticon.ant-input-clear-icon,
+  .anticon.anticon-close-circle,
+  &.ant-input-textarea-show-count::after,
+  .ant-input-show-count-suffix {
+    color: $color;
+    font-size: 10px;
+  }
+
+  // placeholder style
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  ::-webkit-input-placeholder {
+    color: $color;
+  }
+
+  // hover
+  &:hover {
+    color: $hover-color;
+    background: $hover-background;
+    border: $hover-border !important;
+
+    // hover input -> link icon hover
+    .anticon.ant-input-clear-icon-has-suffix,
+    &.anticon.ant-input-clear-icon-has-suffix,
+    .anticon.ant-input-clear-icon,
+    .anticon.anticon-close-circle,
+    .ant-input-group-addon .ant-input-search-button,
+    .ant-input-show-count-suffix {
+      color: $hover-color;
+    }
+  }
+
+  // focus
+  &.ant-input-affix-wrapper-focused,
+  &.yui-input-active-start,
+  &:focus {
+    // focus input -> link icon active
+    .anticon.ant-input-clear-icon-has-suffix,
+    &.anticon.ant-input-clear-icon-has-suffix,
+    .anticon.ant-input-clear-icon,
+    .anticon.anticon-close-circle,
+    .ant-input-prefix,
+    .ant-input-suffix,
+    .ant-input-affix-wrapper-focused
+      + .ant-input-group-addon
+      .ant-input-search-button {
+      color: $words-normal !important;
+    }
+    border: $focus-border !important;
+    color: $focus-color;
+    outline: 0;
+  }
+
+  // // disabled
+  &.disabled,
+  &[disabled],
+  &.ant-input-affix-wrapper-disabled,
+  &.ant-input-group-wrapper.ant-input-search-with-button.yui-input-search-disabled,
+  .ant-input-search .ant-input-affix-wrapper-disabled,
+  &.yui-input-text-area-disabled {
+    .ant-input {
+      cursor: not-allowed !important;
+    }
+    cursor: not-allowed !important;
+    color: $disabled-color !important;
+    background: $disabled-background !important;
+    border: $disabled-border !important;
+    // follow
+    &::-webkit-input-placeholder {
+      color: $disabled-color;
+    }
+    // deep
+    ::-webkit-input-placeholder {
+      color: $disabled-color;
+    }
+    // suffix icon
+    .ant-input-suffix,
+    .ant-input-prefix {
+      cursor: not-allowed !important;
+      color: $disabled-color !important;
+      .ant-input-password-icon,
+      .ant-input-show-count-suffix {
+        cursor: not-allowed !important;
+        color: $disabled-color !important;
+      }
+    }
+    // textArea
+    &::after {
+      cursor: not-allowed !important;
+      color: $disabled-color !important;
+    }
+    .ant-input-wrapper.ant-input-group{
+      .ant-input-group-addon{
+        .ant-input-search-button{
+          cursor: not-allowed !important;
+          color: $disabled-color !important;
+          background: $input-search-background-btn-disabled !important;
+        }
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------------------
+
+// input-number | select
+@mixin input-number-style(
+  // normal
+  $background,
+  $color,
+  $border,
+  // hover
+  $hover-background,
+  $hover-color,
+  $hover-border,
+  // focus
+  $focus-background,
+  $focus-color,
+  $focus-border,
+  // diabled
+  $disabled-background,
+  $disabled-color,
+  $disabled-border
+) {
+  // normal
+  background: $background;
+  color: $color;
+  border: $border;
+
+  // hover
+  &:hover {
+    background: $hover-background;
+    color: $hover-color;
+    border: $hover-border;
+  }
+
+  // focus
+  &:focus,
+  &.ant-input-number-focused,
+  &.ant-input-number-affix-wrapper-focused,
+  &.ant-select-focused,
+  &.yui-input-number-focus {
+    z-index: 10 !important;
+    background: $focus-background !important;
+    color: $focus-color !important;
+    border: $focus-border !important;
+    outline: 0;
+    box-shadow: none;
+    &.yui-input-number-no-border {
+      border: none !important;
+    }
+  }
+
+  // disabled
+  &:disabled,
+  &.yui-input-number-disabled,
+  &.ant-select-disabled {
+    background: $disabled-background !important;
+    color: $disabled-color !important;
+    border: $disabled-border !important;
+    .ant-input-number-prefix,
+    .ant-input-number-group-addon,
+    .ant-select-selector,
+    .ant-select-selection-placeholder,
+    .ant-select-arrow,
+    &.yui-input-number-no-border {
+      color: $disabled-color !important;
+      background: $disabled-background !important;
+      border: none !important;
+      cursor: not-allowed !important;
+    }
+
+    &.ant-select-multiple {
+      .ant-select-selection-item {
+        padding-inline-end: 6px !important;
+      }
+    }
+
+    // follow
+    &::-webkit-input-placeholder {
+      color: $disabled-color;
+    }
+    // deep
+    ::-webkit-input-placeholder {
+      color: $disabled-color;
+    }
+  }
+}
+
+// ----------------------------------------------------------------
+
+@mixin radio-checkbox-style(
+  // normal
+  $background,
+  $color,
+  $border,
+  $background-icon,
+  $border-icon,
+  // hover
+  $hover-background,
+  $hover-color,
+  $hover-border,
+  $hover-background-icon,
+  $hover-border-icon,
+  // active
+  $active-background,
+  $active-color,
+  $active-border,
+  $active-background-icon,
+  $active-border-icon,
+  $active-background-icon-inner,
+  // focus
+  $focus-background,
+  $focus-color,
+  $focus-border,
+  $focus-background-icon,
+  $focus-border-icon,
+  // diabled
+  $disabled-background,
+  $disabled-color,
+  $disabled-border,
+  $disabled-background-icon,
+  $disabled-border-icon,
+  $disabled-background-icon-inner,
+  $disabled-border-icon-inner,
+  // selector prefix
+  $prefix: 'ant'
+) {
+  background: $background;
+  color: $color;
+  border: $border;
+  // normal icon
+  .#{$prefix}-radio,
+  .#{$prefix}-checkbox {
+    .#{$prefix}-radio-inner {
+      background: $background-icon;
+      border: $border-icon;
+    }
+    .#{$prefix}-checkbox-inner {
+      background: $background-icon;
+      border: $border-icon;
+      &::after {
+        border: $active-border-icon;
+        border-top: 0;
+        border-left: 0;
+      }
+    }
+  }
+  // hover
+  &:hover {
+    background: $hover-background;
+    color: $hover-color;
+    border: $hover-border;
+    // hover icon
+    .#{$prefix}-radio,
+    .#{$prefix}-checkbox {
+      .#{$prefix}-radio-inner,
+      .#{$prefix}-checkbox-inner {
+        background: $hover-background-icon;
+        border: $hover-border-icon;
+      }
+      // checked hover
+      &.#{$prefix}-radio-checked,
+      &.#{$prefix}-checkbox-checked {
+        .#{$prefix}-radio-inner,
+        .#{$prefix}-checkbox-inner {
+          background: $hover-background-icon;
+        }
+      }
+    }
+  }
+  // active
+  &:active {
+    background: $active-background;
+    color: $active-color;
+    border: $active-border;
+    // active icon
+    .#{$prefix}-radio,
+    .#{$prefix}-checkbox {
+      .#{$prefix}-radio-inner {
+        background: $active-background-icon;
+        border: $active-border-icon;
+        &::after {
+          background-color: $active-background-icon-inner; // radio icon -> background
+          transform: scale(0.5);
+          opacity: 1;
+        }
+      }
+      .#{$prefix}-checkbox-inner {
+        background: $active-background-icon;
+        &::after {
+          transform: rotate(45deg) scale(1) translate(-50%, -50%);
+          border: $active-border-icon;
+          border-top: 0;
+          border-left: 0;
+          opacity: 1;
+        }
+      }
+      // checked active
+      &.#{$prefix}-radio-checked,
+      &.#{$prefix}-checkbox-checked {
+        .#{$prefix}-radio-inner,
+        .#{$prefix}-checkbox-inner {
+          background: $active-background-icon;
+        }
+      }
+    }
+  }
+  // focus
+  &:focus,
+  .#{$prefix}-radio.#{$prefix}-radio-checked,
+  .#{$prefix}-checkbox.#{$prefix}-checkbox-checked {
+    background: $focus-background;
+    color: $focus-color;
+    border: $focus-border;
+    // icon
+    &::after {
+      border: $focus-border;
+    }
+    + * {
+      color: $focus-color;
+    }
+    // focus icon
+    .#{$prefix}-radio-inner {
+      background: $focus-background-icon;
+      border: $focus-border-icon;
+      &::after {
+        background-color: $focus-color;
+        border-color: $focus-color;
+      }
+    }
+
+    .#{$prefix}-checkbox-inner {
+      // background: $focus-background-icon;
+      border: $focus-border-icon;
+      &::after {
+        // background-color: $focus-color;
+        border-color: $focus-color;
+      }
+    }
+  }
+  // disabled
+  &:disabled,
+  &.#{$prefix}-radio-wrapper-disabled,
+  &.#{$prefix}-checkbox-wrapper-disabled {
+    // background: $disabled-background !important;
+    color: $disabled-color !important;
+    border: $disabled-border !important;
+    // disabled icon
+    .#{$prefix}-radio,
+    .#{$prefix}-checkbox {
+      &.#{$prefix}-radio-checked,
+      &.#{$prefix}-radio-disabled {
+        .#{$prefix}-radio-inner {
+          background: $disabled-background-icon !important;
+          border: $disabled-border-icon !important;
+          &::after {
+            background-color: $disabled-background-icon-inner !important;
+          }
+        }
+        + * {
+          color: $disabled-color;
+        }
+      }
+
+      &.#{$prefix}-checkbox-disabled {
+        .#{$prefix}-checkbox-inner {
+          background: $disabled-background-icon !important;
+          border: $disabled-border-icon !important;
+          &::after {
+            opacity: 0;
+          }
+        }
+        + * {
+          color: $disabled-color !important;
+        }
+      }
+      &.#{$prefix}-checkbox-checked.#{$prefix}-checkbox-disabled {
+        .#{$prefix}-checkbox-inner {
+          &::after {
+            border: $disabled-border-icon-inner;
+            border-top: 0;
+            border-left: 0;
+            opacity: 1;
+          }
+        }
+        + * {
+          color: $disabled-color !important;
+        }
+      }
+    }
+  }
+}
+
+@mixin checkbox-indeterminate(
+  // selector prefix
+  $prefix: 'ant'
+) {
+  &.#{$prefix}-checkbox-indeterminate {
+    .#{$prefix}-checkbox-inner {
+      &::after {
+        width: 8px;
+        height: 8px;
+        margin-top: -4px;
+        margin-left: -4px;
+        border: none;
+        transform: rotate(0deg) scale(0.5) translate(0%, 0%);
+        top: 50%;
+        left: 50%;
+        background-color: $words-high-light;
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------------------
+
+@mixin radio-group-style(
+  // normal
+  $background,
+  $color,
+  $border,
+  // hover
+  $hover-background,
+  $hover-color,
+  $hover-border,
+  // active
+  $active-background,
+  $active-color,
+  $active-border,
+  // focus
+  $focus-background,
+  $focus-color,
+  $focus-border,
+  // diabled
+  $disabled-background,
+  $disabled-color,
+  $disabled-border,
+  $disabled-background-checked
+) {
+  background: $background;
+  color: $color;
+  border: $border;
+  &:hover {
+    background: $hover-background;
+    color: $hover-color;
+    border: $hover-border;
+  }
+  &:active {
+    background: $active-background;
+    color: $active-color;
+    border: $active-border;
+  }
+  &:focus,
+  &.ant-radio-button-wrapper-checked {
+    background: $focus-background;
+    color: $focus-color;
+    border: $focus-border;
+  }
+  &:disabled,
+  &.ant-radio-button-wrapper-disabled {
+    &.ant-radio-button-wrapper-checked {
+      background: $disabled-background-checked !important;
+    }
+    background: $disabled-background !important;
+    color: $disabled-color !important;
+    border: $disabled-border !important;
+  }
+}
+
+// ----------------------------------------------------------------
+
+@mixin switch-style(
+  // normal
+  $background,
+  $color,
+  $border,
+  $background-icon,
+  // hover
+  $hover-background,
+  $hover-color,
+  // active
+  $active-background,
+  $active-color,
+  // focus
+  $focus-color,
+  $focus-border,
+  $focus-background-icon,
+  // diabled
+  $disabled-background,
+  $disabled-color,
+  $disabled-border,
+  $disabled-background-icon
+) {
+  // normal
+  background: $background;
+  border: $border;
+  .ant-switch-inner {
+    color: $color;
+  }
+  .ant-switch-handle {
+    &::before {
+      background-color: $background-icon;
+    }
+  }
+  // hover
+  &:hover {
+    background: $hover-background;
+    color: $hover-color;
+  }
+  // active
+  &:active {
+    background: $active-background;
+    color: $active-color;
+  }
+  // focus | checked
+  &:focus.ant-switch-checked,
+  &.ant-switch-checked {
+    box-shadow: none;
+    border: $focus-border;
+    .ant-switch-inner {
+      color: $focus-color;
+    }
+    .ant-switch-handle {
+      &::before {
+        background-color: $focus-background-icon;
+      }
+    }
+  }
+  // disabled
+  &:disabled,
+  &:disabled.ant-switch-checked:not(.ant-switch-loading) {
+    opacity: 1;
+    box-shadow: none;
+    background: $disabled-background !important;
+    border: $disabled-border !important;
+    .ant-switch-inner {
+      color: $disabled-color !important;
+    }
+    .ant-switch-handle {
+      &::before {
+        background-color: $disabled-background-icon !important;
+      }
+    }
+
+    &.ant-switch-checked.ant-switch-loading {
+      background: $disabled-background !important;
+      border: $focus-border !important;
+      .ant-switch-inner {
+        color: $focus-color !important;
+      }
+      .ant-switch-handle {
+        &::before {
+          background-color: $focus-background-icon !important;
+        }
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------------------
+
+@mixin date-picker-style(
+  // normal
+  $background,
+  $color,
+  $border,
+  $color-icon,
+  // hover
+  $hover-background,
+  $hover-color,
+  $hover-border,
+  // focus
+  $focus-background,
+  $focus-color,
+  $focus-border,
+  // disable
+  $disabled-background,
+  $disabled-color,
+  $disabled-border,
+  $disabled-color-icon
+) {
+  // normal
+  background: $background;
+  border: $border;
+  .yui-date-picker-prefix,
+  .ant-picker-suffix,
+  .ant-picker-range-separator,
+  .ant-picker-range-separator * {
+    color: $color-icon;
+  }
+  input,
+  ::-webkit-input-placeholder {
+    color: $color;
+  }
+  &.yui-date-picker-work {
+    input,
+    .ant-picker-range-separator * {
+      color: $focus-color;
+    }
+  }
+  //hover
+  &:hover {
+    background: $hover-background;
+    color: $hover-color;
+    border: $hover-border;
+  }
+  // focus
+  &:focus,
+  &.ant-picker-focused {
+    box-shadow: none;
+    outline: 0;
+    border: $focus-border;
+    background: $focus-background;
+    input {
+      color: $focus-color;
+    }
+  }
+  // disabled
+  &:disabled,
+  &.ant-picker-disabled {
+    background: $disabled-background !important;
+    border: $disabled-border !important;
+    .yui-date-picker-prefix,
+    .ant-picker-suffix,
+    .ant-picker-range-separator,
+    .ant-picker-range-separator * {
+      color: $disabled-color-icon !important;
+    }
+    input,
+    ::-webkit-input-placeholder {
+      color: $disabled-color !important;
+    }
+  }
+}
+
+// ----------------------------------------------------------------
+
+@mixin modal-style(
+  $background,
+  $color,
+  $border,
+  $border-radius,
+  $font-size,
+  $font-weight,
+  $box-shadow:$modal-box-shadow
+) {
+  background: $background;
+  color: $color;
+  border: $border;
+  border-radius: $border-radius;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  box-shadow: $box-shadow;
+}
+
+@mixin slider-handle (
+  $height,
+  $height-handle,
+) {
+  height: $height;
+  &::before {
+    height: $height-handle;
+  }
+  &::after {
+    height: $height-handle;
+  }
+}
+@mixin slider-handle-vertical (
+  $width,
+  $width-handle,
+) {
+  width: $width;
+  height: 8px;
+  &::before {
+    width: $width-handle;
+  }
+  &::after {
+    width: $width-handle;
+  }
+}
+@mixin slider-dot ($size) {
+  height: $size;
+  width: $size;
+}
+
+// slider
+@mixin slider-ui-handle (
+  $size,
+  $size-handle,
+  $size-border,
+) {
+  height: $size;
+  width: $size;
+  top: calc(50% - 0.5 * $size);
+  border-width: $size-border;
+  &::before {
+    height: $size-handle;
+    width: $size-handle;
+    top: calc(50% - 0.5 * $size-handle);
+    left: calc(50% - 0.5 * $size-handle);
+  }
+}
+
+@mixin slider-ui-handle-vertical (
+  $size,
+  $size-handle,
+  $size-border,
+) {
+  height: $size;
+  width: $size;
+  left: calc(50% - 0.5 * $size);
+  top: auto;
+  border-width: $size-border;
+  &::before {
+    height: $size-handle;
+    width: $size-handle;
+    top: calc(50% - 0.5 * $size-handle);
+    left: calc(50% - 0.5 * $size-handle);
+  }
+}
+
+@mixin slider-ui-dot (
+  $size,
+  $size-handle,
+  $size-border,
+) {
+  height: $size;
+  width: $size;
+  top: calc(50% - 0.5 * $size);
+  border-width: $size-border;
+  &::before {
+    content: none;
+  }
+}
+
+@mixin slider-ui-dot-vertical (
+  $size,
+  $size-handle,
+  $size-border,
+) {
+  height: $size;
+  width: $size;
+  left: calc(50% - 0.5 * $size);
+  top: auto;
+  border-width: $size-border;
+  &::before {
+    content: none;
+  }
+}
+
+@mixin slider-ui-rail-track (
+  $height,
+) {
+  height: $height;
+  top: calc(50% - 0.5 * $height);
+}
+
+@mixin slider-ui-rail-track-vertical (
+  $width
+) {
+  width: $width;
+  height: 100%;
+  top: auto;
+  left: calc(50% - 0.5 * $width);
+}
+// ----------------------------------------------------------------
+
+@mixin menu-height($height, $line-height) {
+  height: $height;
+  line-height: $line-height;
+}
+
+@mixin menu-color($color, $background) {
+  background: $background;
+  color: $color;
+}
+
+// ----------------------------------------------------------------
+
+@mixin tabs-size($height, $line-height, $font-size) {
+  height: $height;
+  line-height: $line-height;
+  font-size: $font-size;
+}
+
+// ----------------------------------------------------------------
+
+@mixin pagination-item-base {
+  min-width: $pagination-item-width;
+  height: $pagination-item-height;
+  line-height: $pagination-line-height;
+  margin-right: $pagination-item-margin;
+  background-color: $pagination-item-background;
+  border: none;
+}
+
+@mixin pagination-item-a(
+  $normal-color,
+  $hover-color
+) {
+  a {
+      color: $normal-color;
+      &:hover {
+        color: $hover-color;
+      }
+      @content;
+    }
+}
+
+// ---------------------------steps-----------------------------
+
+@mixin steps-item-container-selector {
+  .ant-steps-item.yui-steps-item {
+    .ant-steps-item-container {
+      @content;
+    }
+  }
+}
+
+@mixin steps-item-style (
+  // tail
+  $tail-color,
+  // icon
+  $icon-border-color,
+  $icon-bg-color,
+  $icon-text-color,
+  // custom dot
+  $dot-outer-color,
+  $dot-inner-color,
+  $dot-pointer-color,
+  $dot-large-border-color,
+  // title & description
+  $title-color,
+  $des-color,
+  // selector
+  $selector: ".ant-steps-item-container"
+) {
+  #{$selector} {
+    .ant-steps-item-tail {
+      padding: 1.5px 0;
+      &::after {
+        background-color: $tail-color;
+        height: $steps-tail-width;
+      }
+    }
+    .ant-steps-item-icon {
+      border-color: $icon-border-color;
+      background-color: $icon-bg-color;
+      .ant-steps-icon {
+        color: $icon-text-color;
+        .ant-steps-icon-dot {
+          background: $icon-border-color;
+        }
+        .yui-custom-dot {
+          background-color:$dot-outer-color;
+          &::before {
+            background-color: $dot-inner-color;
+          }
+          &::after{
+            background-color: $dot-pointer-color;
+          }
+        }
+        .yui-custom-large-dot {
+          border-color: $dot-large-border-color;
+        }
+      }
+    }
+    .ant-steps-item-content {
+      .ant-steps-item-title {
+        font-size: $steps-content-font-size;
+        color: $title-color;
+        .ant-steps-item-subtitle {
+          font-size: $steps-content-font-size;
+          color: $title-color;
+        }
+      }
+      .ant-steps-item-description {
+        font-size: $steps-content-font-size;
+        color: $des-color;
+      }
+    }
+  }
+}
+
+@mixin steps-vertical-item-tail (
+  $top,
+  $left,
+) {
+  @include steps-item-container-selector {
+    .ant-steps-item-tail {
+      top: $top;
+      left: $left;
+      &::after {
+        height: 100%;
+        width: $steps-tail-width;
+      }
+    }
+  }
+}
+
+@mixin steps-text-updown-item(
+  $item-height,
+  $title-position-bottom,
+  $des-position-top,
+) {
+  .ant-steps-item {
+    position: relative;
+    height: $item-height;
+    .ant-steps-item-container {
+      .ant-steps-item-tail {
+        @include position-vertical-center;
+      }
+      .ant-steps-item-icon {
+        @include position-vertical-center;
+      }
+      .ant-steps-item-content {
+        .ant-steps-item-title {
+          position: absolute;
+          bottom: $title-position-bottom;
+          transform: translateX(-50%);
+        }
+        .ant-steps-item-description {
+          position: absolute;
+          top: $des-position-top;
+        }
+      }
+    }
+  }
+}
+
+// ------------------------------ tabs ------------------------------
+
+@mixin tabs-style(
+  $base-bg,
+  $hover-bg,
+  $active-bg,
+  $focus-bg,
+  $disabled-bg,
+) {
+  .ant-tabs-tab {
+    background-color: $base-bg;
+    &.ant-tabs-tab-active {
+      background-color: $focus-bg;
+    }
+    &:hover {
+      background-color: $hover-bg;
+    }
+    &:active {
+      background-color: $active-bg;
+    }
+    &.ant-tabs-tab-disabled {
+      background-color: $base-bg;
+      &.ant-tabs-tab-active {
+        background-color: $disabled-bg;
+        &::after {
+          opacity: 0.3;
+        }
+        &:hover, &:active {
+          background-color: $disabled-bg;
+        }
+      }
+    }
+  }
+}
+

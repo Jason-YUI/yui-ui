@@ -1,0 +1,206 @@
+.storybook-demo > .yui-btn {
+  margin: 8px 8px 8px 0;
+}
+
+// tooltip
+.ant-slider-tooltip .ant-tooltip-inner {
+  background: $slider-ui-base-bg;
+  color: $words-high-light;
+}
+
+.yui-ui-slider.ant-slider {
+  &:hover .ant-slider-rail, .ant-slider-rail {
+    background-color: $slider-ui-base-bg;
+  }
+  &:hover .ant-slider-handle.ant-tooltip-open, .ant-slider-handle-dragging.ant-slider-handle {
+    background-color: $slider-hover-bg;
+    border-color: $slider-ui-handle-color !important;
+  }
+  &:hover .ant-slider-handle, .ant-slider-handle {
+    background-color: $slider-ui-base-bg;
+    border-color: $slider-ui-handle-color !important;
+  }
+  &:hover .ant-slider-track, .ant-slider-track {
+    background-color: $slider-ui-handle-color;
+  }
+
+  .ant-slider-dot {
+    background-color: $slider-base-dot-bg;
+    border-color: $slider-ui-base-bg;
+  }
+
+  .ant-slider-dot-active {
+    background-color: $slider-ui-base-bg;
+    border-color: $slider-ui-handle-color;
+  }
+
+  .ant-slider-handle, .ant-tooltip-open {
+    margin: 0;
+    &::before {
+      position: absolute;
+      border-radius: 50%;
+      content: '';
+      background-color: $slider-ui-handle-color;
+    }
+  }
+
+  .ant-slider-mark-text {
+    color:  $words-normal;
+  }
+
+  // size
+  &.yui-slider-ui-small {
+    .ant-slider-rail,
+    .ant-slider-step,
+    .ant-slider-track {
+      @include slider-ui-rail-track($slider-ui-size-sm);
+    }
+    .ant-slider-handle {
+      @include slider-ui-handle(0.5 * $slider-ui-handle-size, 0.5 * $slider-ui-handle-before-size, 0.5 * $slider-ui-handle-border);
+    }
+    &.yui-slider-ui-type-small .ant-slider-handle, .ant-slider-dot {
+      @include slider-ui-dot(0.25 * $slider-ui-handle-size, 0.5 * $slider-ui-handle-before-size, 0.5 * $slider-ui-handle-border);
+    }
+    // type
+    &.yui-slider-ui-type-small {
+      .ant-slider-handle:hover, .ant-slider-handle.ant-slider-handle-dragging {
+        @include slider-ui-handle(0.5 * $slider-ui-handle-size, 0.5 * $slider-ui-handle-before-size, 0.5 * $slider-ui-handle-border);
+        &::before {
+          content: '' !important;
+        }
+      }
+    }
+  }
+  &.yui-slider-ui-middle {
+    .ant-slider-rail,
+    .ant-slider-step,
+    .ant-slider-track {
+      @include slider-ui-rail-track($slider-ui-size-md);
+    }
+    .ant-slider-handle {
+      @include slider-ui-handle($slider-ui-handle-size, $slider-ui-handle-before-size, $slider-ui-handle-border);
+    }
+    &.yui-slider-ui-type-small .ant-slider-handle, .ant-slider-dot {
+      @include slider-ui-dot(0.5 * $slider-ui-handle-size, $slider-ui-handle-before-size, $slider-ui-handle-border);
+    }
+    &.yui-slider-ui-type-small {
+      .ant-slider-handle:hover, .ant-slider-handle.ant-slider-handle-dragging {
+        @include slider-ui-handle($slider-ui-handle-size, $slider-ui-handle-before-size, $slider-ui-handle-border);
+        &::before {
+          content: '' !important;
+        }
+      }
+    }
+  }
+  &.yui-slider-ui-large {
+    .ant-slider-rail,
+    .ant-slider-step,
+    .ant-slider-track {
+      @include slider-ui-rail-track($slider-ui-size-lg);
+    }
+    .ant-slider-handle {
+      @include slider-ui-handle(2 * $slider-ui-handle-size, 2 * $slider-ui-handle-before-size, 2 * $slider-ui-handle-border);
+    }
+    &.yui-slider-ui-type-small .ant-slider-handle, .ant-slider-dot {
+      @include slider-ui-dot($slider-ui-handle-size, 2 * $slider-ui-handle-before-size, 2 * $slider-ui-handle-border);
+    }
+    &.yui-slider-ui-type-small {
+      .ant-slider-handle:hover, .ant-slider-handle.ant-slider-handle-dragging {
+        @include slider-ui-handle(2 * $slider-ui-handle-size, 2 * $slider-ui-handle-before-size, 2 * $slider-ui-handle-border);
+        &::before {
+          content: '' !important;
+        }
+      }
+    }
+  }
+
+  &.ant-slider-vertical {
+    &.yui-slider-ui-small {
+      .ant-slider-rail,
+      .ant-slider-step,
+      .ant-slider-track {
+        @include slider-ui-rail-track-vertical($slider-ui-size-sm);
+      }
+      .ant-slider-handle {
+        @include slider-ui-handle-vertical(0.5 * $slider-ui-handle-size, 0.5 * $slider-ui-handle-before-size, 0.5 * $slider-ui-handle-border);
+      }
+      &.yui-slider-ui-type-small .ant-slider-handle, .ant-slider-dot {
+        @include slider-ui-dot-vertical(0.25 * $slider-ui-handle-size, 0.5 * $slider-ui-handle-before-size, 0.5 * $slider-ui-handle-border);
+      }
+      &.yui-slider-ui-type-small {
+        .ant-slider-handle:hover, .ant-slider-handle.ant-slider-handle-dragging {
+          @include slider-ui-handle-vertical(0.5 * $slider-ui-handle-size, 0.5 * $slider-ui-handle-before-size, 0.5 * $slider-ui-handle-border);
+          &::before {
+            content: '' !important;
+          }
+        }
+      }
+    }
+    &.yui-slider-ui-middle {
+      .ant-slider-rail,
+      .ant-slider-step,
+      .ant-slider-track {
+        @include slider-ui-rail-track-vertical($slider-ui-size-md);
+      }
+      .ant-slider-handle {
+        @include slider-ui-handle-vertical($slider-ui-handle-size, $slider-ui-handle-before-size, $slider-ui-handle-border);
+      }
+      &.yui-slider-ui-type-small .ant-slider-handle, .ant-slider-dot {
+        @include slider-ui-dot-vertical(0.5 * $slider-ui-handle-size, $slider-ui-handle-before-size, $slider-ui-handle-border);
+      }
+      &.yui-slider-ui-type-small {
+        .ant-slider-handle:hover, .ant-slider-handle.ant-slider-handle-dragging {
+          @include slider-ui-handle-vertical($slider-ui-handle-size, $slider-ui-handle-before-size, $slider-ui-handle-border);
+          &::before {
+            content: '' !important;
+          }
+        }
+      }
+    }
+    &.yui-slider-ui-large {
+      .ant-slider-rail,
+      .ant-slider-step,
+      .ant-slider-track {
+        @include slider-ui-rail-track-vertical($slider-ui-size-lg);
+      }
+      .ant-slider-handle {
+        @include slider-ui-handle-vertical(2 * $slider-ui-handle-size, 2 * $slider-ui-handle-before-size, 2 * $slider-ui-handle-border);
+      }
+      &.yui-slider-ui-type-small .ant-slider-handle, .ant-slider-dot {
+        @include slider-ui-dot-vertical($slider-ui-handle-size, 2 * $slider-ui-handle-before-size, 2 * $slider-ui-handle-border);
+      }
+      &.yui-slider-ui-type-small {
+        .ant-slider-handle:hover, .ant-slider-handle.ant-slider-handle-dragging {
+          @include slider-ui-handle-vertical(2 * $slider-ui-handle-size, 2 * $slider-ui-handle-before-size, 2 * $slider-ui-handle-border);
+          &::before {
+            content: '' !important;
+          }
+        }
+      }
+    }
+    .ant-slider-dot {
+      margin-left: 0;
+    }
+  }
+
+  // disabled
+  &.ant-slider-disabled {
+    .ant-slider-rail {
+      background-color: $slider-ui-base-bg !important;
+    }
+    .ant-slider-track {
+      background-color: $baisc-disable !important;
+    }
+    .ant-slider-handle, .ant-slider-dot {
+      border-color: $baisc-disable !important;
+      background-color: $part-plate;
+      &::before {
+        background-color: $baisc-disable;
+      }
+    }
+    &:hover .ant-slider-handle.ant-tooltip-open {
+      border-color: $baisc-disable !important;
+      background-color: $part-plate;
+    }
+  }
+}

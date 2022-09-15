@@ -1,0 +1,73 @@
+.yui-squeeze-drawer{
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  .content-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    overflow: auto;
+  }
+
+  .open-btn{
+    height: 40px;
+    width: 8px;
+    background-color: $squeeze-open-btn-background;
+    border-radius: 2px;
+    position: absolute;
+    vertical-align: unset;
+    cursor: pointer;
+    &:hover {
+      background-color: $squeeze-open-btn-hover-background;
+    }
+    .anticon{
+      display: block;
+      font-size: 10px;
+      width: 100%;
+      height: 100%;
+    }
+    svg{
+      width: 100%;
+      height: 100%;
+      color: $words-normal;
+    }
+  }
+
+  &.yui-squeeze-drawer-left,
+  &.yui-squeeze-drawer-right {
+    .open-btn{
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &.yui-squeeze-drawer-top,
+  &.yui-squeeze-drawer-bottom {
+    .open-btn {
+      width: 40px;
+      height: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  
+}
+
+
+.yui-squeeze-drawer-main-content{
+  display: inline-block;
+  flex: 1;
+  border-radius: 2px;
+  overflow: hidden;
+  background-color: $element-background;
+}
+
+.yui-squeeze-drawer-extra-content{
+  display: inline-block;
+  background-color: $part-plate;
+  border-radius: 2px;
+  position: relative;
+}
+
+

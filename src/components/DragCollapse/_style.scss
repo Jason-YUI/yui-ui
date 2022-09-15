@@ -1,0 +1,96 @@
+.yui-dcollapse-drawer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .content-container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+    }
+
+    // horizontal
+    &.yui-dcollapse-drawer-horizontal {
+        .content-container {
+            flex-direction: row;
+        }
+
+        .yui-dcollapse-drawer-hr-arr {
+            width: $dcollapse-bar-short-side;
+            height: $dcollapse-bar-long-side;
+        }
+
+        .yui-dcollapse-drawer-hr {
+            width: 4px;
+            height: 100%;
+            border-top: unset;
+            border-bottom: unset;
+            border-left: 1.5px solid $dcollapse-basic-bg;
+            border-right: 1.5px solid $dcollapse-basic-bg;
+            cursor: ew-resize;
+            &:hover {
+                .yui-dcollapse-drawer-hr-arr {
+                    width: $dcollapse-bar-short-side * 2;
+                    height: $dcollapse-bar-long-side;
+                }
+            }
+            &:active {
+                .yui-dcollapse-drawer-hr-arr {
+                    width: $dcollapse-bar-short-side * 2;
+                    height: $dcollapse-bar-long-side;
+                }
+            }
+        }
+
+        .yui-dcollapse-drawer-bottom {
+            height: 100%;
+        }
+    }
+}
+
+.yui-dcollapse-drawer-top {
+    height: 100%;
+    width: 100%;
+    background-color: $dcollapse-panel-bg;
+}
+
+.yui-dcollapse-drawer-bottom {
+    flex: 1;
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    background-color: $dcollapse-panel-bg;
+}
+
+.yui-dcollapse-drawer-hr {
+    position: relative;
+    height: 4px;
+    width: 100%;
+    border-top: 1.5px solid $dcollapse-basic-bg;
+    border-bottom: 1.5px solid $dcollapse-basic-bg;
+    background-color: $dcollapse-track-bg;
+    cursor: ns-resize;
+    &:hover {
+        background-color: $dcollapse-track-hover-bg;
+        .yui-dcollapse-drawer-hr-arr {
+            height: $dcollapse-bar-short-side * 2;
+            background-color: $dcollapse-bar-hover-bg;
+        }
+    }
+    &:active {
+        .yui-dcollapse-drawer-hr-arr {
+            height: $dcollapse-bar-short-side * 2;
+            background-color: $dcollapse-bar-active-bg;
+        }
+    }
+}
+
+.yui-dcollapse-drawer-hr-arr {
+    @include position-center;
+    width: $dcollapse-bar-long-side;
+    height: $dcollapse-bar-short-side;
+    background: $dcollapse-bar-bg;
+    border-radius: $border-radius;
+}

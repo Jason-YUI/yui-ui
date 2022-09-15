@@ -1,0 +1,185 @@
+.yui-tabs-only {
+  display: inline-flex;
+  font-weight: $font-weight-normal;
+  color: $words-normal;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: $border-radius;
+  align-items: center;
+  justify-content: center;
+ 
+  .yui-tab-pane {
+    height: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    cursor: pointer;
+    &:hover {
+      background-color: $tabs-base-background-hover;
+    }
+    &:active {
+      background-color: $tabs-base-background-active;
+    }
+    .yui-tab-pane-content {
+      min-width: 80px;
+      height: 100%;
+      padding: 0 $tabs-base-padding;
+      box-sizing: border-box;
+      @include text-ellipsis;
+    }
+  }
+
+  &.yui-tabs-only-disabled {
+    .yui-tab-pane {
+      cursor: not-allowed;
+      color: $words-disable;
+    }
+  }
+}
+
+// type default
+.yui-tabs-only.yui-tabs-only-default {
+  background: $element-background;
+  border: 1px solid $tabs-base-background;
+
+  .yui-tab-pane-active {
+    background: $tabs-base-background;
+  }
+
+  // disabled
+  &.yui-tabs-only-disabled {
+    border-color: $tabs-base-background-disabled;
+    .yui-tab-pane {
+      &:hover {
+        background-color: transparent;
+      }
+    }
+   .yui-tab-pane-active {
+      background-color: $tabs-base-background-disabled;
+      &:hover {
+        background-color: $tabs-base-background-disabled;
+      }
+    }
+  }
+}
+
+// type piend
+.yui-tabs-only.yui-tabs-only-piend {
+
+  .yui-tab-pane {
+    border-radius: $border-radius;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -2px;
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-image: none;
+    }
+  }
+
+  .yui-tab-pane-active {
+    background-color: $element-background;
+    border-radius: 0;
+    &:hover {
+      background-color:$tabs-base-background-hover;
+    }
+    &::after {
+      background-image: $high-light-area-linear-90;
+    }
+  }
+
+  &.yui-tabs-only-disabled {
+    .yui-tab-pane {
+      &:hover {
+        background-color: transparent;
+      }
+      &:active {
+        background-color: transparent;
+      }
+    }
+    .yui-tab-pane-active {
+      &:hover {
+        background-color:$element-background;
+      }
+      &::after {
+        opacity: 0.3;
+      }
+    }
+  }
+}
+
+// type solid
+.yui-tabs-only.yui-tabs-only-solid {
+  .yui-tab-pane {
+    background-color: $element-background;
+    border: 1px solid transparent;
+    border-radius: $border-radius;
+    &:not(:last-of-type) {
+      margin-right: 4px;
+    }
+    &:hover {
+      background-color: $tabs-base-background-hover;
+    }
+    &:active {
+      background-color: $tabs-base-background-active;
+    }
+  }
+  .yui-tab-pane-active {
+    border: 1px solid $words-high-light;
+    color: $words-high-light;
+  }
+  // disabled
+  &.yui-tabs-only-disabled {
+    .yui-tab-pane {
+      &:hover {
+        background-color: $element-background;
+      }
+      &:active {
+        background-color: $element-background;
+      }
+    }
+    .yui-tab-pane-active {
+      color: $words-disable;
+      border: 1px solid $tabs-base-background-disabled;
+    }
+  }
+}
+
+
+// size
+.yui-tabs-only.yui-tabs-only-size-small {
+  @include tabs-size(
+    $tabs-item-default-height,
+    $tabs-item-default-line-height,
+    $font-size-base
+  );
+}
+
+.yui-tabs-only.yui-tabs-only-size-middle {
+  @include tabs-size(
+    $tabs-item-middle-height,
+    $tabs-item-middle-line-height,
+    $font-size-base
+  );
+}
+.yui-tabs-only.yui-tabs-only-size-large {
+  @include tabs-size(
+    $tabs-item-large-height,
+    $tabs-item-large-line-height,
+    $font-size-medium
+  );
+}
+
+// text-ellipsis
+.yui-tabs-only-not-atuo-width {
+  .yui-tab-pane {
+    .yui-tab-pane-content {
+      width: 80px;
+      @include text-ellipsis;
+    }
+  }
+}
+
