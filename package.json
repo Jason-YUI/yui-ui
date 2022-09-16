@@ -1,7 +1,9 @@
 {
   "name": "yui-ui",
   "version": "0.0.1",
-  "author": "jason",
+  "author": {
+    "name": "jason"
+  },
   "private": false,
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
@@ -55,7 +57,8 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "npm run clean-docs && build-storybook -s public",
     "prepublishOnly": "npm run build",
-    "start": "npm run storybook"
+    "start": "npm run storybook",
+    "chromatic": "npx chromatic --project-token=0524ce1ed554"
   },
   "eslintConfig": {
     "extends": [
@@ -97,11 +100,14 @@
     "@storybook/preset-scss": "~1.0.3",
     "@storybook/react": "~6.4.13",
     "@types/node": "^17.0.9",
+    "chromatic": "^6.9.0",
     "css-loader": "^6.5.1",
     "rimraf": "^3.0.2",
     "sass": "^1.48.0",
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.66.0"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "yui-ui@0.0.1"
 }
