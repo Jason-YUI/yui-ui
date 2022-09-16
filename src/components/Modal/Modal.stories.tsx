@@ -2,13 +2,9 @@ import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism'
-
 import { ComponentMeta } from '@storybook/react';
-
 import { ExclamationCircleOutlined } from '@ant-design/icons';
-
 import Draggable from 'react-draggable';
-
 import {
     Title,
     Description,
@@ -17,12 +13,9 @@ import {
     Heading,
     Subheading
 } from '@storybook/addon-docs';
-
 import Modal from './index';
 import { FRCModalProps } from './modal';
-
 import Button from '../Button'
-
 
 // ----------------------------------------------------------------
 

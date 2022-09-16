@@ -45,7 +45,7 @@ export interface BaseInputNumberProps extends InputNumberProps {
   /** 按下回车的回调 */
   onPressEnter?: (e: React.KeyboardEvent<HTMLInputElement>) => void
   /** 点击上下箭头的回调 */
-  onStep?: (value: number | string, info: { offset: number | string, type: 'up' | 'down' } | null) => void
+  onStep?: () => void
   /** 移除焦点 */
   blur?: () => void
   /** 获取焦点 */
